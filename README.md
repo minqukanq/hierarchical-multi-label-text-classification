@@ -48,7 +48,7 @@ Anyway, it should depend on what your data and task are.
 - ~~Use `gensim` package to pre-train data.~~
 - ~~Use `glove` tools to pre-train data.~~
 - ~~Even can use a **fasttext** network to pre-train data.~~
-We used word2vec in the paper, but this implementation uses embedding.
+- This implementation used an embedding layer, but the original paper uses word2vec.
 
 ## Network Structure
 
