@@ -32,7 +32,7 @@ You can use `jieba` package if you are going to deal with the Chinese text data.
 This repository can be used in other datasets (text classification) in two ways:
 
 1. Modify your datasets into the same format of the sample.
-2. Modify the data preprocess code in `data_helpers.py`.
+2. Modify the data preprocess code in `data_helpers.py`, `data_loader.py`.
 
 Anyway, it should depend on what your data and task are.
 
