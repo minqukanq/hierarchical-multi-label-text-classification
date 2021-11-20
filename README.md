@@ -56,7 +56,6 @@ Anyway, it should depend on what your data and task are.
 
 ## Reference
 
-**If you want to follow the paper or utilize the code, please note the following info in your work:** 
 
 ```bibtex
 @inproceedings{huang2019hierarchical,
