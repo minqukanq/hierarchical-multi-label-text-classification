@@ -1,4 +1,4 @@
-# hierarchical-multi-label-text-classification
+# hierarchical-multi-label-text-classification-pytorch
 Hierarchical Multi-label Text Classification: An Attention-based Recurrent Network Approach
 
 This repository is a PyTorch implementation made with reference to [this research project](https://dl.acm.org/doi/10.1145/3357384.3357885).
