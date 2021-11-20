@@ -45,9 +45,9 @@ Anyway, it should depend on what your data and task are.
 
 ~~You can pre-training your word vectors(based on your corpus) in many ways:~~
 
-~~- Use `gensim` package to pre-train data.~~
-~~- Use `glove` tools to pre-train data.~~
-~~- Even can use a **fasttext** network to pre-train data.~~
+- ~~Use `gensim` package to pre-train data.~~
+- ~~Use `glove` tools to pre-train data.~~
+- ~~Even can use a **fasttext** network to pre-train data.~~
 We used word2vec in the paper, but this implementation uses embedding.
 
 ## Network Structure
