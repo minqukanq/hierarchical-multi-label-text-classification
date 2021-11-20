@@ -49,26 +49,6 @@ Anyway, it should depend on what your data and task are.
 
 ![](https://live.staticflickr.com/65535/48647692206_2e5e6e7f13_o.png)
 
-## Reference
-
-
-```bibtex
-@inproceedings{huang2019hierarchical,
-  author    = {Wei Huang and
-               Enhong Chen and
-               Qi Liu and
-               Yuying Chen and
-               Zai Huang and
-               Yang Liu and
-               Zhou Zhao and
-               Dan Zhang and
-               Shijin Wang},
-  title     = {Hierarchical Multi-label Text Classification: An Attention-based Recurrent Network Approach},
-  booktitle = {Proceedings of the 28th {ACM} {CIKM} International Conference on Information and Knowledge Management, {CIKM} 2019, Beijing, CHINA, Nov 3-7, 2019},
-  pages     = {1051--1060},
-  year      = {2019},
-}
-```
 
 ---
 
