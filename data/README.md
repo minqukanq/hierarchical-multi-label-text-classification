@@ -1,4 +1,6 @@
-## This data exists to show the format of the data, not the data for training and validation.
+## Sample data exists to show the format of the data, not the data for training.
+
+### You can download the [Patent Dataset](https://drive.google.com/file/d/1So3unr5p_vlYq31gE0Ly07Z2XTvD5QlM/view) used in the paper. Make sure they are under the /data folder.
 
 #### Now, I will explain how to construct the label index. 
 
