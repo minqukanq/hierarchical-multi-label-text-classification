@@ -13,7 +13,7 @@
 * "subsection": it's the second level category index.
 * "group": it's the third level category index.
 * "subgroup": it's the fourth level category index.
-* "labels": it's the total category which add the index offset. (I will explain that later)
+* "labels": it's the total category which add the index offset.
 
 **Assume that your total category number of level-2 is 100 (*N*=100), of level-3 is 500 (*M*=500). *N* & *M* is the offset for the `labels` attribute.**
 
