@@ -1,5 +1,33 @@
 import numpy as np
 import heapq
+import json
+from collections import Counter
+
+
+def create_vocab(data):
+    texts_split = [' '.join(js['title'] + js['abstract']) for js in data]
+    all_text =' '.join([texts for texts in texts_split])
+
+    words = all_text.split()
+    counts = Counter(words)
+    vocab = sorted(counts, key=counts.get, reverse=True)
+    vocab_to_int = {word: ii for ii, word in enumerate(vocab, 1)}
+    return vocab_to_int
+
+def get_vocab_size(train_file_path, valid_file_path):
+    data = []
+    with open(train_file_path) as f:
+        for line in f:
+            js = json.loads(line)
+            data.append(js)
+    with open(train_file_path) as f:
+        for line in f:
+            js = json.loads(line)
+            data.append(js)
+
+    vocab_to_int = create_vocab(data)
+    vocab_size = len(vocab_to_int)
+    return vocab_size
 
 def get_onehot_label_threshold(scores, threshold=0.5):
     """

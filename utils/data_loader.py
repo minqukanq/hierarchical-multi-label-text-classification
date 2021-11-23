@@ -6,6 +6,7 @@ import torch.optim
 from torch.utils.data.dataset import Dataset
 
 import numpy as np
+from utils import data_helper
 
 
 class InputFeature(object):
@@ -52,15 +53,6 @@ def convert_examples_to_features(js, args, vocab_to_int):
     
     return InputFeature(js['id'], features, js['labels'], onehot_labels_tuple_list, onehot_labels_list )
 
-def create_vocab(data):
-    texts_split = [' '.join(js['title'] + js['abstract']) for js in data]
-    all_text =' '.join([texts for texts in texts_split])
-
-    words = all_text.split()
-    counts = Counter(words)
-    vocab = sorted(counts, key=counts.get, reverse=True)
-    vocab_to_int = {word: ii for ii, word in enumerate(vocab, 1)}
-    return vocab_to_int
 
 class TextDataset(Dataset):
     def __init__(self, args, file_path) -> None:
@@ -70,8 +62,8 @@ class TextDataset(Dataset):
             for line in f:
                 js = json.loads(line)
                 data.append(js)
-
-        vocab_to_int = create_vocab(data)
+        
+        vocab_to_int = data_helper.create_vocab(data)
         self.vocab_size = len(vocab_to_int)
 
         for js in data:

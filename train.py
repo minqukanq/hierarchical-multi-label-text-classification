@@ -17,12 +17,6 @@ from models.harnn import HARNN
 from utils.data_loader import TextDataset
 from utils import data_helper as dh
 
-logging.basicConfig(
-    filename='./logs/harnn-pytorch.log',
-    level=logging.INFO,
-    filemode='w',
-    format='%(name)s - %(levelname)s - %(message)s')
-
 
 def save_checkpoint(state, is_best, filename):
     torch.save(state, filename)
@@ -57,9 +51,11 @@ def train(args):
 
     train_loader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True, drop_last=True, num_workers=4)
     val_loader = DataLoader(valid_dataset, batch_size=args.batch_size, shuffle=True, drop_last=True, num_workers=4)
-
+    
+    vocab_size = dh.get_vocab_size(args.train_file_path, args.test_file_path)
+    
     logging.info("Init nn...")
-    net = HARNN(num_classes_list=args.num_classes_layer, total_classes=args.total_classes, vocab_size=train_dataset.vocab_size,
+    net = HARNN(num_classes_list=args.num_classes_layer, total_classes=args.total_classes, vocab_size=vocab_size,
                     embedding_size=args.embedding_size, lstm_hidden_size=args.lstm_hidden_size,
                     attention_unit_size=args.attention_unit_size,
                     fc_hidden_size=args.fc_hidden_size, beta=args.beta,
@@ -188,6 +184,12 @@ def set_seed(seed=42):
     torch.backends.cudnn.deterministic = False
 
 def main():
+    logging.basicConfig(
+    filename='./logs/harnn-pytorch.log',
+    level=logging.INFO,
+    filemode='w',
+    format='%(name)s - %(levelname)s - %(message)s')
+    
     parser = argparse.ArgumentParser()
 #     args = parser.parse_args()
     args = parser.parse_args(args=[])
