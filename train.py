@@ -36,7 +36,8 @@ class Loss(nn.Module):
         self.MSELoss = nn.MSELoss()
 
     def forward(self, first_logits, second_logits, third_logits, fourth_logits, global_logits,
-                input_y_first, input_y_second, input_y_third, input_y_fourth, input_y):
+                first_scores, second_scores, input_y_first, input_y_second, input_y_third,
+                input_y_fourth, input_y):
         # Local Loss
         losses_1 = self.BCEWithLogitsLoss(first_logits, input_y_first.float())
         losses_2 = self.BCEWithLogitsLoss(second_logits, input_y_second.float())
