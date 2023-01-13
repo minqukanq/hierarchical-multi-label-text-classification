@@ -72,7 +72,7 @@ def train(args):
     scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=0,num_training_steps=len(train_loader)*args.epochs)
 
     logging.info("Training...")
-    # writer = SummaryWriter('summary')
+    is_best = 0
     for epoch in range(args.epochs):
         train_loss = 0.0
         train_cnt = 0
