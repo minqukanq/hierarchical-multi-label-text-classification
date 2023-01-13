@@ -11,7 +11,7 @@ def create_vocab(data):
     words = all_text.split()
     counts = Counter(words)
     vocab = sorted(counts, key=counts.get, reverse=True)
-    vocab_to_int = {word: ii for ii, word in enumerate(vocab, 1)}
+    vocab_to_int = {word: ii for ii, word in enumerate(vocab)}
     return vocab_to_int
 
 def get_vocab_size(train_file_path, valid_file_path):
